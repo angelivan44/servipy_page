@@ -10,7 +10,7 @@ import Formato from "../components/Formato";
 
 export default function Main({loginUser, setLoginUser}) {
   const history = useHistory();
-  const [view , setView] = useState("plano")
+  const [view , setView] = useState("dashboard")
   const [userData, setUserData] = useState({
     displayName:"",
     email:"",
@@ -58,8 +58,7 @@ export default function Main({loginUser, setLoginUser}) {
 }
 
 const StyleDiv = styled.div`
-  height: 600px;
-  display: flex;
+  display: flex;7
   border: 1px solid #e5e5e5;
   & aside {
     width: 15em;

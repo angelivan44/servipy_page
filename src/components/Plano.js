@@ -1,22 +1,24 @@
 import styled from "@emotion/styled";
-import color from "../app/color";
 
-import { useHistory } from "react-router";
-import HeaderArea from "../components/HeaderArea";
-import ItemList from "../components/ItemList";
-import TabItem from "../components/TabItem";
-import Card from "../components/Card";
-import DescriptionArea from "../components/Description";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { NotionRenderer } from "react-notion";
 
-export default function Plano({paths, setPaths, documentsPath, setDocumentsPath }) {
-  const [itemSelect, setItemSelect] = useState("excel");
-  const history = useHistory();
+export default function Plano({ paths, setPaths, documentsPath, setDocumentsPath }) {
+  const [bock, setBock] = useState({})
 
+  useEffect(() => {
+    async function getStaticProps() {
+    const data  = await fetch(
+    "https://notion-api.splitbee.io/v1/page/c0dfce2f575a4a01b25026ea32591803"
+  ).then(res => res.json());
+      setBock(data)
+  };
+    getStaticProps()
+  },[]
+  )
   return (
       <StyleTab>
-          <h1>TUTORIAL</h1>
-          <DescriptionArea type="plano" paths={paths}  documentsPath={documentsPath}></DescriptionArea>
+          <NotionRenderer blockMap={bock}  fullPage={true}/>
       </StyleTab>
   );
 }
@@ -26,5 +28,4 @@ const StyleTab = styled.div`
   flex-direction:column;
   align-items: center;  
   justify-content: center;
-  height:100%;
 `;

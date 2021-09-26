@@ -1,33 +1,37 @@
 import styled from "@emotion/styled";
-import logo from "../assets/logo 3.svg"
+import { useHistory } from "react-router"
+import "react-notion/src/styles.css";
+import "prismjs/themes/prism-tomorrow.css";
 
-import { useHistory } from "react-router";
+import { NotionRenderer } from "react-notion";
+import { useEffect, useState } from "react";
 
-import CardForm from "./CardForm";
 
-export default function Dashboard({name, src,email, setUserData }) {
-  const history = useHistory();
 
+
+export default function Dashboard({ name, src, email, setUserData }) {
+  const [bock, setBock] = useState({})
+  useEffect(() => {
+    async function getStaticProps() {
+    const data  = await fetch(
+    "https://notion-api.splitbee.io/v1/page/2e721f85d3f9425c9641d5e71a7b4fda"
+  ).then(res => res.json());
+      setBock(data)
+  };
+    getStaticProps()
+  },[]
+  )
+  console.log(bock)
   return (
-    <>
+  
       <StyleDiv>
-        <StyleImg src={logo}/>
-        <h2>SERVIPY</h2>
-        <p>servipy es un programa para la elaboracion de planos de gestion de servidumbre, estos planos son parte de los expedientes de imposicion de servidumbre.</p>
+        <NotionRenderer blockMap={bock}  fullPage={true}/>
       </StyleDiv>
-    </>
+
   );
 }
 
-const StyleImg = styled.img`
-  width:213px;
-  height:213px;
-  border-radius:50%;
-`
 const StyleDiv = styled.div`
 width:100%;
 padding:3em 3em;
-display:flex;
-flex-direction:column;
-align-items:center;
 `

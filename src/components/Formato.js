@@ -28,6 +28,7 @@ export default function Formato({documentsPath,setDocumentsPath, paths}) {
 
 const StyleTab = styled.div`
   display: flex;
+  min-height: 100vh;
   flex-direction:column;
   align-items: center;
   justify-content: center;
