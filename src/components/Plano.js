@@ -24,7 +24,7 @@ export default function Plano({paths, setPaths, documentsPath, setDocumentsPath 
 const StyleTab = styled.div`
   display: flex;
   flex-direction:column;
-  align-items: center;
+  align-items: center;  
   justify-content: center;
   height:100%;
 `;
