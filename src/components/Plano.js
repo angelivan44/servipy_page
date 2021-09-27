@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import "react-notion/src/styles.css";
+import "prismjs/themes/prism-tomorrow.css";
 
 import { useEffect, useState } from "react";
 import { NotionRenderer } from "react-notion";
