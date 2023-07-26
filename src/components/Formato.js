@@ -16,7 +16,7 @@ export default function Formato({documentsPath,setDocumentsPath, paths}) {
 
         <StyleTab>
           <h1>RECURSOS</h1>
-          <a href="https://hazel-server-electron.vercel.app/download" target="_blank"><ItemList type="software" text="Servipy Last Version"></ItemList></a>
+          <a href="https://github.com/angelivan44/Servidumbre/releases/download/v0.7.0/servipy.Setup.0.7.0.exe" target="_blank"><ItemList type="software" text="Servipy Last Version"></ItemList></a>
           <a href="https://github.com/angelivan44/Servidumbre/releases/download/v0.1.0/Database.Model.xlsx" target="_blank"><ItemList type="excel" text="Excel database model" ></ItemList></a>
           <a href="https://github.com/angelivan44/Servidumbre/releases/download/v0.1.0/Modelo.dxf.dxf" target="_blank"><ItemList type="autodesk" text="Dxf model"></ItemList></a>
           <a href="https://github.com//angelivan44/Servidumbre/releases/download/v0.1.0/Areas.zip" target="_blank"><ItemList type="csv" text="Csv model"></ItemList></a>
